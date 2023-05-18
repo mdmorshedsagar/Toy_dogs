@@ -13,6 +13,10 @@ import AuthProvider from './Provider/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import ErrorPage from './Component/Pages/ErrorPage';
 import Blog from './Component/Pages/Blog';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
+import AllToyes from './Component/Pages/AllToyes/AllToyes';
+import MyToyes from './Component/Pages/MyToyes/MyToyes';
+import AddToyes from './Component/Pages/AddToyes/AddToyes';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +39,19 @@ const router = createBrowserRouter([
       {
         path:"/blog",
         element: <Blog></Blog>
-      }
+      },
+      {
+        path:"/allToys",
+        element:<AllToyes></AllToyes> 
+      },
+      {
+        path:"/myToys",
+        element:<PrivateRoutes > <MyToyes></MyToyes> </PrivateRoutes>
+      },
+      {
+        path:"/addToys",
+        element:<PrivateRoutes><AddToyes></AddToyes> </PrivateRoutes>
+      },
       
 
     ]

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { FaGooglePlusG } from "react-icons/fa";
@@ -7,6 +7,8 @@ import { FaGooglePlusG } from "react-icons/fa";
 const Login = () => {
   const { createLogin,createGoogle } =useContext(authContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const locations =location.state?.from?.pathname || "/" ;
   const handleLogin = (event) => {
     event.preventDefault();
    setError("")
@@ -29,7 +31,7 @@ const Login = () => {
           },
         });
          form.reset()
-         Navigate("/");
+         navigate(locations);
       })
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars
@@ -53,6 +55,7 @@ const Login = () => {
             color: "#fff",
           },
         });
+        navigate(locations);
       })
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars

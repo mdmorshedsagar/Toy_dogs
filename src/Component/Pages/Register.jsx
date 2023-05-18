@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 import { FaGooglePlusG } from "react-icons/fa";
 const Register = () => {
   const { createRegister ,createGoogle} = useContext(authContext);
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const handleRegister = (event) => {
     event.preventDefault();
@@ -41,7 +42,7 @@ const Register = () => {
           );
           console.log(user)
           form.reset();
-          
+          navigate('/')
         
       })
 
@@ -66,6 +67,7 @@ const Register = () => {
             color: "#fff",
           },
         });
+        navigate('/')
       })
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars
