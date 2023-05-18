@@ -1,14 +1,15 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { FaGooglePlusG } from "react-icons/fa";
 
 const Login = () => {
   const { createLogin,createGoogle } =useContext(authContext);
+  const [error, setError] = useState("");
   const handleLogin = (event) => {
     event.preventDefault();
-   
+   setError("")
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -28,11 +29,12 @@ const Login = () => {
           },
         });
          form.reset()
+         Navigate("/");
       })
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars
         const errorMessage = error.message;
-        console.log("email address and password does not match");
+       setError("email address and password does not match");
       });
   };
   const handleGoogle = () => {
@@ -55,7 +57,7 @@ const Login = () => {
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars
         const errorMessage = error.message;
-       
+       setError("Google singin not succesfully")
       });
   };
     return (
@@ -115,6 +117,7 @@ const Login = () => {
                       </Link>{" "}
                     </h1>
                   </div>
+                  <p className="text-lg font-semibold text-orange-600">{error}</p>
                   <div className="form-control mt-6">
                     <button className="btn btn-outline font-bold text-xl ">Login</button>
                   </div>

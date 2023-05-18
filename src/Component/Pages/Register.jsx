@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -6,9 +6,10 @@ import toast from "react-hot-toast";
 import { FaGooglePlusG } from "react-icons/fa";
 const Register = () => {
   const { createRegister ,createGoogle} = useContext(authContext);
+  const [error, setError] = useState("");
   const handleRegister = (event) => {
     event.preventDefault();
-
+     setError('')
     const form = event.target;
     const name = form.name.value;
     const img = form.img.value;
@@ -46,7 +47,7 @@ const Register = () => {
 
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
+        setError(errorMessage);
       });
   };
   const handleGoogle = () => {
@@ -69,7 +70,7 @@ const Register = () => {
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars
         const errorMessage = error.message;
-       
+       setError(errorMessage)
       });
   };
   return (
@@ -136,6 +137,7 @@ const Register = () => {
                   </Link>{" "}
                 </h1>
               </div>
+              <p className="text-lg font-semibold text-orange-600">{error}</p>
               <div className="form-control mt-6">
                 <button className="btn btn-outline font-bold text-xl ">
                   Registration
