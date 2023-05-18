@@ -1,22 +1,43 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
-
+import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
 const Register = () => {
   const { createRegister } = useContext(authContext);
   const handleRegister = (event) => {
     event.preventDefault();
 
     const form = event.target;
-    // const name = form.name.value;
-    // const img = form.img.value;
+    const name = form.name.value;
+    const img = form.img.value;
     const email = form.email.value;
     const password = form.password.value;
 
     createRegister(email, password)
-      .then((result) => {
+      .then(async (result) => {
         const user = result.user;
-        console.log(user);
+        await updateProfile(user, {
+            displayName: name,
+            photoURL: img,
+          })
+            .then(() => {})
+            .catch(() => {});
+          toast.success(
+            "Registration successfully",
+  
+            {
+              style: {
+                borderRadius: "10px",
+                background: "#333",
+                color: "#fff",
+              },
+            }
+          );
+          console.log(user)
+          form.reset();
+          
+        
       })
 
       .catch((error) => {

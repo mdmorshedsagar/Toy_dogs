@@ -1,10 +1,33 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "../../Provider/AuthProvider";
 
 
 const Login = () => {
+  const { createLogin } =useContext(authContext);
+  const handleLogin = (event) => {
+    event.preventDefault();
+   
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createLogin(email, password)
+      .then((result) => {
+        // eslint-disable-next-line no-unused-vars
+        const user = result.user;
+        
+      console.log(user)
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-unused-vars
+        const errorMessage = error.message;
+        console.log("email address and password does not match");
+      });
+  };
     return (
         <div >
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="hero min-h-screen bg-white">
             <div className="hero-content flex-col ">
               <div className="text-center ">
