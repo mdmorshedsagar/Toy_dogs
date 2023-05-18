@@ -27,7 +27,7 @@ const Login = () => {
             color: "#fff",
           },
         });
-     
+         form.reset()
       })
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars

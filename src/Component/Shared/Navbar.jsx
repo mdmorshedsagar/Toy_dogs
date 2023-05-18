@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 
 import mainLogo from "../../assets/logo.avif"
+import { useContext } from "react";
+import { authContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, createLogOut } = useContext(authContext);
+  const handleLogOut = () => {
+    createLogOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
     return (
         <div className="navbar bg-zinc-100">
   <div className="navbar-start">
@@ -13,6 +23,7 @@ const Navbar = () => {
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
        
         <li><Link to="/" className="font-bold text-lg">Home</Link></li>
+        <li><Link to="/blog" className="font-bold text-lg">Blog</Link></li>
       </ul>
     </div>
     <a className="btn btn-ghost normal-case text-xl">
@@ -24,12 +35,27 @@ const Navbar = () => {
       
     
       <li><Link to="/" className="font-bold text-lg">Home</Link></li>
+      <li><Link to="/blog" className="font-bold text-lg">Blog</Link></li>
     </ul>
   </div>
   <div className="navbar-end">
-
-    <Link to='/login' className="btn btn-outline">Login</Link>
-  </div>
+        {user ? (
+          <div className="flex">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={user?.photoURL} title={user?.displayName} />
+              </div>
+            </label>
+            <button onClick={handleLogOut} className="btn btn-outline">
+              Log out
+            </button>
+          </div>
+        ) : (
+          <Link to="/login" className="btn btn-outline font-bold ">
+            login
+          </Link>
+        )}
+      </div>
 </div>
     );
 };
