@@ -24,12 +24,15 @@ const Register = () => {
             .then(() => {})
             .catch(() => {});
           toast.success(
-            "Registration successfully",
+            "Register successfully",
   
             {
               style: {
                 borderRadius: "10px",
                 background: "#333",
+                fontSize:"25px",
+                paddingRight:"20px",
+                paddingLeft:"20px",
                 color: "#fff",
               },
             }

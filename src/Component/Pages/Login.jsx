@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 
 const Login = () => {
@@ -16,8 +17,17 @@ const Login = () => {
       .then((result) => {
         // eslint-disable-next-line no-unused-vars
         const user = result.user;
-        
-      console.log(user)
+        toast.success("Login successfully", {
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            fontSize:"25px",
+            paddingRight:"20px",
+            paddingLeft:"20px",
+            color: "#fff",
+          },
+        });
+     
       })
       .catch((error) => {
         // eslint-disable-next-line no-unused-vars
