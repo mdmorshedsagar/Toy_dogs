@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import mainLogo from "../../assets/logo.avif"
+
 const Navbar = () => {
     return (
         <div className="navbar bg-zinc-100">
@@ -14,7 +16,7 @@ const Navbar = () => {
       </ul>
     </div>
     <a className="btn btn-ghost normal-case text-xl">
-        <img className="w-[95px]" src="https://cdn.shopify.com/s/files/1/0553/2178/8461/files/logo.png?v=1636766158" alt="dog" />
+        <img className="w-[100px]" src={mainLogo} alt="dog" />
     </a>
   </div>
   <div className="navbar-center hidden lg:flex">
