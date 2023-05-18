@@ -1,9 +1,31 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { authContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
-    return (
-        <form >
+  const { createRegister } = useContext(authContext);
+  const handleRegister = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    // const name = form.name.value;
+    // const img = form.img.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createRegister(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
+  return (
+    <form onSubmit={handleRegister}>
       <div className="hero min-h-screen bg-white">
         <div className="hero-content flex-col ">
           <div className="text-center">
@@ -11,7 +33,6 @@ const Register = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body bg-base-100">
-              
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -58,10 +79,7 @@ const Register = () => {
                     className="input input-bordered grow"
                     required
                   />
-                 
                 </div>
-
-               
 
                 <h1 className="text-xl">
                   If you register please{" "}
@@ -71,14 +89,16 @@ const Register = () => {
                 </h1>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-outline font-bold text-xl ">Registration</button>
+                <button className="btn btn-outline font-bold text-xl ">
+                  Registration
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </form>
-    );
+  );
 };
 
 export default Register;
