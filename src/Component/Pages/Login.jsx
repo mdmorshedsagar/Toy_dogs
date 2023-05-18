@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
-
+import { FaGooglePlusG } from "react-icons/fa";
 
 const Login = () => {
-  const { createLogin } =useContext(authContext);
+  const { createLogin,createGoogle } =useContext(authContext);
   const handleLogin = (event) => {
     event.preventDefault();
    
@@ -33,6 +33,29 @@ const Login = () => {
         // eslint-disable-next-line no-unused-vars
         const errorMessage = error.message;
         console.log("email address and password does not match");
+      });
+  };
+  const handleGoogle = () => {
+    createGoogle()
+      .then((result) => {
+        // eslint-disable-next-line no-unused-vars
+        const user = result.user;
+        
+        toast.success("Google sign in successfully", {
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            fontSize:"25px",
+            paddingRight:"20px",
+            paddingLeft:"20px",
+            color: "#fff",
+          },
+        });
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-unused-vars
+        const errorMessage = error.message;
+       
       });
   };
     return (
@@ -95,7 +118,16 @@ const Login = () => {
                   <div className="form-control mt-6">
                     <button className="btn btn-outline font-bold text-xl ">Login</button>
                   </div>
-                
+                  <hr />
+                <div className="pt-2">
+                  <button
+                    onClick={handleGoogle}
+                    className="btn btn-outline btn-info w-full"
+                  >
+                    <FaGooglePlusG className="text-2xl mr-2 font-bold"></FaGooglePlusG>{" "}
+                    signin with Google
+                  </button>
+                </div>
                  
                 </div>
               </div>
