@@ -11,11 +11,14 @@ import Login from './Component/Pages/Login';
 import Register from './Component/Pages/Register';
 import AuthProvider from './Provider/AuthProvider';
 import { Toaster } from 'react-hot-toast';
+import ErrorPage from './Component/Pages/ErrorPage';
+import Blog from './Component/Pages/Blog';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App> ,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:'/',
@@ -28,6 +31,10 @@ const router = createBrowserRouter([
       {
         path:"register",
         element: <Register></Register>
+      },
+      {
+        path:"/blog",
+        element: <Blog></Blog>
       }
       
 
