@@ -17,6 +17,7 @@ import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import AllToyes from './Component/Pages/AllToyes/AllToyes';
 import MyToyes from './Component/Pages/MyToyes/MyToyes';
 import AddToyes from './Component/Pages/AddToyes/AddToyes';
+import SingleSubData from './Component/Pages/HomeComponent/SingleSubData';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/allToys",
-        element:<AllToyes></AllToyes> 
+        element: <AllToyes></AllToyes> 
       },
       {
         path:"/myToys",
@@ -52,7 +53,10 @@ const router = createBrowserRouter([
         path:"/addToys",
         element:<PrivateRoutes><AddToyes></AddToyes> </PrivateRoutes>
       },
-      
+      {
+        path:`/singleToy/:id`,
+        element: <PrivateRoutes><SingleSubData></SingleSubData> </PrivateRoutes>
+      }
 
     ]
   },

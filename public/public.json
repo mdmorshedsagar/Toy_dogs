@@ -1,0 +1,75 @@
+[
+    {
+        "picture": "https://media.istockphoto.com/id/952081702/photo/cute-pink-bear-doll-with-bow-isolated-on-white-background-with-shadow-reflection-playful.jpg?s=612x612&w=0&k=20&c=oACmuhxJmXgS1zPfNa1JHUF6vSHR19ggDBRwjhZju4E=",
+        "name": "Teddy Bear 1",
+        "price": 14.99,
+        "rating": 4.2,
+        "description": "A cute and huggable teddy bear for all ages.",
+        "category": "Teddy"
+        
+    } ,
+    {
+        "picture": "https://i.pinimg.com/736x/b2/68/5e/b2685e768c5975fdcbf9bd52bf275efb.jpg",
+        "name": "Teddy Bear 2",
+        "price": 19.99,
+        "rating": 4.8,
+        "description": "An extra soft teddy bear with a bowtie.",
+        "category": "Teddy"
+      },
+      {
+        "picture": "https://media.istockphoto.com/id/1291681199/photo/teddy-bear-with-a-red-heart-isolated-over-white-background-valentines-day-concept.jpg?b=1&s=170667a&w=0&k=20&c=crfrHx_c848ZwPUgVKF37JGV3c9WSgVAtbBzp4r_E_k=",
+        "name": "Teddy Bear 3",
+        "price": 24.99,
+        "rating": 4.6,
+        "description": "A large teddy bear perfect for snuggling.",
+        "category": "Teddy"
+      },
+      {
+        "picture": "https://media.gettyimages.com/id/1235459799/photo/vintage-antique-rocking-toy-horse-ornament-isolated-on-white-background.jpg?s=612x612&w=gi&k=20&c=YXnt8Xc86rzMYcurlPXw4ktEsoTptgXwznfmxjIDZxM=",
+        "name": "Horse 1",
+        "price": 39.99,
+        "rating": 4.5,
+        "description": "A majestic and sturdy toy horse for young equestrians.",
+        "category": "Horse"
+      },
+      {
+        "picture": "https://rukminim1.flixcart.com/image/416/416/kkyc9zk0/toy-accessory/y/p/l/musical-horse-with-rider-toy-for-kids-battery-operated-realistic-original-imagy7yh67gbmy7w.jpeg?q=70",
+        "name": "Horse 2",
+        "price": 54.99,
+        "rating": 4.8,
+        "description": "An elegant and lifelike horse figure with flowing mane and tail.",
+        "category": "Horse"
+      },
+      {
+        "picture": "https://rukminim1.flixcart.com/image/416/416/k0wqwsw0/showpiece-figurine/k/2/n/nh-horse-toy-1016-nihuusravee-original-imafkhby2mf7h89h.jpeg?q=70",
+        "name": "Horse 3",
+        "price": 29.99,
+        "rating": 4.2,
+        "description": "A soft plush horse toy that's perfect for cuddling.",
+        "category": "Horse"
+      },
+      {
+        "picture": "https://media.istockphoto.com/id/1097957308/photo/little-red-british-kitten-playing-with-a-colorful-ball.jpg?s=612x612&w=0&k=20&c=Vs_lT-yrl43Dcw_YPA_V8wjyFhZiA7hNTIf-2djCE4Q=",
+        "name": "Cat 1",
+        "price": 24.99,
+        "rating": 4.5,
+        "description": "A soft and cuddly plush cat toy with realistic features.",
+        "category": "Cat"
+      },
+      {
+        "picture": "https://img.freepik.com/free-photo/lovely-pet-portrait-isolated_23-2149192348.jpg",
+        "name": "Cat 2",
+        "price": 19.99,
+        "rating": 4.2,
+        "description": "A playful and interactive robotic cat that mimics real cat behavior.",
+        "category": "Cat"
+      },
+      {
+        "picture": "https://www.shutterstock.com/image-photo/calico-kitten-toy-260nw-543297028.",
+        "name": "Cat 3",
+        "price": 34.99,
+        "rating": 4.8,
+        "description": "A cute and fluffy cat plushie that's perfect for snuggling.",
+        "category": "Cat"
+      }
+]
