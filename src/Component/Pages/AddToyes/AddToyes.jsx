@@ -1,38 +1,56 @@
-// import Swal from "sweetalert2";
-
-const handleAddCoffee = (event) => {
-  event.preventDefault();
-
-  const form = event.target;
-
-  const name = form.name.value;
-  const picture = form.picture.value;
-  const seller = form.seller.value;
-  const email = form.email.value;
-  const category = form.category.value;
-  const price = form.price.value;
-  const rating = form.rating.value;
-  const quantity = form.quantity.value;
-    const description = form.description.value;
-  const sellers={
-    name,picture,seller,email,category,price,rating,quantity,description
-  }
-
-  
+import { useContext } from "react";
+import { authContext } from "../../../Provider/AuthProvider";
+import Swal from 'sweetalert2'
 
 
-
-console.log(sellers)
- 
-  
-
-};
 
 const AddToyes = () => {
+  const { user} = useContext(authContext);
+  const handleAddToy = (event) => {
+    event.preventDefault();
+  
+    const form = event.target;
+  
+    const name = form.name.value;
+    const picture = form.picture.value;
+    const seller = form.seller.value;
+    const email = form.email.value;
+    const category = form.category.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+      const description = form.description.value;
+    const addToyData={
+      name,picture,seller,email,category,price,rating,quantity,description
+    }
+    console.log(addToyData)
+  
+    fetch('http://localhost:5000/addToy', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(addToyData)
+  })
+      .then(res => res.json())
+      .then(data => {
+          
+          if(data.insertedId){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Toy Added Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
+    })
+       
+  
+  };
   return (
     <div className="bg-[#F4F3F0] p-24">
             <h2 className="text-4xl font-bold text-center py-4">Add a Toy</h2>
-            <form onSubmit={handleAddCoffee}>
+            <form onSubmit={handleAddToy}>
                
                 <div className="md:flex mb-8 gap-6">
                     <div className="form-control md:w-1/2">
@@ -48,7 +66,9 @@ const AddToyes = () => {
                             <span className="label-text">Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="name" placeholder="Inter toy name" className="input input-bordered w-full" />
+                            <input type="text" name="name"
+                           
+                            placeholder="Inter toy name" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -58,7 +78,8 @@ const AddToyes = () => {
                             <span className="label-text">Seller name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="seller" placeholder="Seller name" className="input input-bordered w-full" />
+                            <input type="text" name="seller"
+                             defaultValue={user?.displayName}  placeholder="Seller name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ">
@@ -66,7 +87,9 @@ const AddToyes = () => {
                             <span className="label-text">Seller email</span>
                         </label>
                         <label className="input-group">
-                            <input type="email" name="email" placeholder="Inter toy name" className="input input-bordered w-full" />
+                            <input type="email" name="email" 
+                            defaultValue={user?.email}
+                            placeholder="Inter toy name" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
