@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 
 const SubtoyCards = (tab) => {
+
     const {picture,name,description,price,_id}=tab.tab;
+  
     return (
         <div className="card card-side bg-base-100 h-[300px] shadow-xl">
         <figure className="w-[80%] h-full"><img src={picture} className="h-full w-full" alt="Movie"/></figure>
