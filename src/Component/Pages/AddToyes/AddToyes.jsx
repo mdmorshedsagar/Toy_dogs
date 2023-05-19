@@ -45,7 +45,7 @@ const AddToyes = () => {
             title: "Success!",
             text: "Toy Added Successfully",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "Okhay",
           });
           form.reset();
         }

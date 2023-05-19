@@ -1,28 +1,33 @@
 
-
+import {
+    
+    useLoaderData
+  } from "react-router-dom";
+import ToysTable from "./toysTable";
 const AllToyes = () => {
+    const loaders = useLoaderData();
+    console.log(loaders)
     return (
         <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
-          {/* head */}
+         
           <thead >
             <tr >
-              <th>seller</th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>seller name</th>
+              <th>Toy Name</th>
+              <th>Sub category</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
+
+            {
+                loaders.map(table => <ToysTable key={table._id} table={table}></ToysTable> )
+            }
            
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Cy Gandertons</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+           
           
           </tbody>
         </table>
