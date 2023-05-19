@@ -18,6 +18,7 @@ import AllToyes from './Component/Pages/AllToyes/AllToyes';
 import MyToyes from './Component/Pages/MyToyes/MyToyes';
 import AddToyes from './Component/Pages/AddToyes/AddToyes';
 import SingleSubData from './Component/Pages/HomeComponent/SingleSubData';
+import SingleToy from './Component/Pages/AllToyes/SingleToy';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
         loader:() => fetch("http://localhost:5000/allToys")
       },
       {
+        path:`/singleToy/:id`,
+        element: <PrivateRoutes> <SingleToy></SingleToy> </PrivateRoutes> ,
+        loader: ({params}) => fetch(`http://localhost:5000/singleToy/${params.id}`)
+      },
+      {
         path:"/myToys",
         element:<PrivateRoutes > <MyToyes></MyToyes> </PrivateRoutes>
       },
@@ -55,9 +61,9 @@ const router = createBrowserRouter([
         element:<PrivateRoutes><AddToyes></AddToyes> </PrivateRoutes>
       },
       {
-        path:`/singleToy/:id`,
+        path:`/singleSubToy/:id`,
         element: <PrivateRoutes><SingleSubData></SingleSubData> </PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/singleToy/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/singleSubToy/${params.id}`)
       }
 
     ]

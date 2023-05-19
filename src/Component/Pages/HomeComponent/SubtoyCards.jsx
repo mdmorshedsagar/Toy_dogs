@@ -14,7 +14,7 @@ const SubtoyCards = (tab) => {
           <p className="font-bold">Price:${price}</p>
           <div className="card-actions justify-end">
           <Link
-            to={`/singleToy/${_id}`}
+            to={`/singleSubToy/${_id}`}
             className="btn btn-outline"
           >
             View details
