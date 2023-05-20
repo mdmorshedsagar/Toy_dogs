@@ -29,7 +29,7 @@ const AddToyes = () => {
       quantity,
       description,
     };
-    console.log(addToyData);
+   
 
     fetch("http://localhost:5000/addToy", {
       method: "POST",
