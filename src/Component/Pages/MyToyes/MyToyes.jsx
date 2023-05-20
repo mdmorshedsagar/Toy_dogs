@@ -5,9 +5,10 @@ import MyToysTable from "./MyToysTable";
 
 const MyToyes = () => {
     const { user } = useContext(authContext);
+    
     const [myToys, setMyToys] = useState([]);
     useEffect(() => {
-        fetch(`https://dog-toys-server.vercel.app/myToys/${user?.email}`)
+        fetch(`http://localhost:5000/myToys/${user?.email}`)
           .then((res) => res.json())
           .then((data) => {
             
@@ -17,11 +18,31 @@ const MyToyes = () => {
     
     return (
         <div>
+                  <div className="overflow-x-auto">
+  <table className="table table-zebra w-full">
+   
+    <thead>
+    <tr>
+              <th className="text-xl">seller name</th>
+              <th className="text-xl">Toy Name</th>
+              <th className="text-xl">Sub category</th>
+              <th className="text-xl">Quantity</th>
+              <th className="text-xl">Price</th>
+              <th className="text-xl">Details</th>
+   </tr>
+    </thead>
+    <tbody>
+    {
+                myToys.map( myToy => <MyToysTable key={myToy._id} myToy={myToy} myToys={myToys} setMyToys={setMyToys} ></MyToysTable> )
+             }
+     
+  
+    </tbody>
+  </table>
+</div>
 
            <div>
-             {
-                myToys.map( myToy => <MyToysTable key={myToy._id} myToy={myToy}></MyToysTable> )
-             }
+           
            </div>
         </div>
     );

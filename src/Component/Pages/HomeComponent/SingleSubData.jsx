@@ -5,7 +5,7 @@ import {
   } from "react-router-dom";
 const SingleSubData = () => {
    const singleData =useLoaderData( );
-   console.log(singleData)
+  
    const {picture,description,price,rating,name} = singleData;
     return (
        <div className="bg-base-100">

@@ -1,42 +1,58 @@
-import {
-    
-   Link
-  } from "react-router-dom";
 
-const MyToysTable = (myToy) => {
-    const {name,picture,seller,email,category,price,rating,quantity,description}=myToy.myToy;
-    console.log(name,picture,seller,email,category,price,rating,quantity,description)
+import Swal from "sweetalert2";
+
+
+const MyToysTable = ({myToy,myToys,setMyToys}) => {
+    const {_id,name,seller,category,price,quantity}=myToy;
+    const handleDelete = id => {
+      console.log(id);
+      Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+          if (result.isConfirmed) {
+
+
+              fetch(`http://localhost:5000/myToys/${id}`, {
+                  method: 'DELETE'
+              })
+                  .then(res => res.json())
+                  .then(data => {
+                      console.log(data);
+                      if (data.deletedCount > 0) {
+                          Swal.fire(
+                              'Deleted!',
+                              'Your Toy has been deleted.',
+                              'success'
+                          )
+                          const filtering = myToys.filter(data => data._id !== id)
+                          setMyToys(filtering)
+
+                          
+                      }
+                  })
+
+          }
+      })
+  }
+
     return (
-        <div>
-            <div className="overflow-x-auto">
-  <table className="table table-zebra w-full">
-    {/* head */}
-    <thead>
-    <tr>
-              <th className="text-xl">seller name</th>
-              <th className="text-xl">Toy Name</th>
-              <th className="text-xl">Sub category</th>
-              <th className="text-xl">Quantity</th>
-              <th className="text-xl">Price</th>
-              <th className="text-xl">Details</th>
-            </tr>
-    </thead>
-    <tbody>
-     
-    <tr>
-        <td>{seller}</td>
-        <td>{name}</td>
-        <td>{category}</td>
-        <td>{quantity}</td>
-        <td>${price}</td>
-        <td> <Link  className="btn bg-black hover:bg-white hover:text-black hover:rounded-xl"> View details </Link> </td>
-      </tr>
-     
-    </tbody>
-  </table>
-</div>
-        </div>
+      <tr>
+      <td>{seller}</td>
+      <td>{name}</td>
+      <td>{category}</td>
+      <td>{quantity}</td>
+      <td>${price}</td>
+      <td>
+      <button onClick={() => handleDelete(_id)} className="btn bg-black hover:bg-white hover:text-black  hover:rounded-xl">Delete</button>
+      </td>
+    </tr> 
     );
-};
+    };
 
 export default MyToysTable;
