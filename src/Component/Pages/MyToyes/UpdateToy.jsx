@@ -55,7 +55,7 @@ const UpdateToy = () => {
   return (
    
     <div className="bg-[#F4F3F0] p-16">
-      <h2 className="text-4xl font-bold text-center pb-4">Add a Toy</h2>
+      <h2 className="text-4xl font-bold text-center pb-4">Update Toy</h2>
       <form onSubmit={handleUpdateToy}>
         <div className="md:flex mb-8 gap-6">
           <div className="form-control md:w-1/2">

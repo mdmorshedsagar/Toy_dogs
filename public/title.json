@@ -1,14 +1,30 @@
 [
-    {   "name":"teddy bear",
-        "category_id": "1",
-        "id":"1"
+    { 
+        "picture":"https://media.istockphoto.com/id/1208322430/photo/cute-maltese-dog-relaxing-on-sofa-at-modern-living-room.jpg?b=1&s=170667a&w=0&k=20&c=gz6Dl3iD468I9KDNyHBckcSDmr4_p-QfVN6NVTx5574="
     },
-    {   "name":"horse",
-        "category_id": "2",
-        "id":"2"
+    { 
+        "picture":"https://media.istockphoto.com/id/469360172/photo/pug-dog.jpg?b=1&s=170667a&w=0&k=20&c=YpSQbyi2w6gVicpUk3CL5Pefblmh1uJ6zd_XGH2SIso="
     },
-    {   "name":"Cat",
-        "category_id": "3",
-        "id":"3"
+    { 
+        "picture":"https://media.istockphoto.com/id/1327654972/photo/its-a-paddle-board-time.jpg?b=1&s=170667a&w=0&k=20&c=va_mQIotDZcM0GGK-K8W2WnHz6_5wMv4fyfHja13hHw="
+    },
+    { 
+        "picture":"https://media.istockphoto.com/id/598175960/photo/cute-puppy.jpg?b=1&s=170667a&w=0&k=20&c=LJcmhyWMkjwkYF33UEzPiH_oFN61PqxFd2LtgIlR-0Q="
+    },
+    { 
+        "picture":"https://media.istockphoto.com/id/1249754856/photo/funny-little-black-and-white-border-collie-puppy-isolated-on-background-holding-paws-plate.jpg?b=1&s=170667a&w=0&k=20&c=umo4bT3VJetv-0-vwIXlB5qqUp5GrYo2VDpFuxSUPkU="
+    },
+    { 
+        "picture":"https://media.istockphoto.com/id/483449001/photo/group-of-dogs.jpg?b=1&s=170667a&w=0&k=20&c=GPdfG9EKRGeZIkmSLrmrC9yECIdaMEwnD4ol7ofYr5E="
+    },
+    { 
+        "picture":"https://media.istockphoto.com/id/1359382329/photo/a-chihuahua-dog-in-a-tuxedo-at-a-wedding.jpg?b=1&s=170667a&w=0&k=20&c=wtE1cVRrBxyosNhRRX6pbREnXffFWYz3-pthHTNvf00="
+    },
+    { 
+        "picture":"https://images.unsplash.com/photo-1550206574-42cfa61e2a9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHRveSUyMGRvZ3MlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+    },
+    { 
+        "picture":"https://images.unsplash.com/photo-1608900456338-7cbee0e46390?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
     }
+ 
 ]
