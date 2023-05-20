@@ -2,12 +2,13 @@ import { useState,useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import SubtoyCards from './SubtoyCards';
-
+import AOS from 'aos';
 const ShopCategory = () => {
   const [tabs, setTabs] = useState([]);
   const [category, setCategory] = useState("Teddy");
   
   useEffect(() => {
+    AOS.init();
     fetch(`http://localhost:5000/${category}`)
       .then((res) => res.json())
       .then((result) => {

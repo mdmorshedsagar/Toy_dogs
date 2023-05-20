@@ -1,9 +1,11 @@
 import React, { useEffect ,useState} from 'react';
 import GalleryItem from './GalleryItem';
+import  AOS  from 'aos';
 
 const Gallery = () => {
     const [galleries,setGalleries] = useState([]);
     useEffect(()=>{
+        AOS.init();
         fetch("http://localhost:5000/gallery")
         .then(res => res.json())
         .then(data => setGalleries(data))

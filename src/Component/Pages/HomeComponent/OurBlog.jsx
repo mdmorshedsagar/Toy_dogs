@@ -1,13 +1,18 @@
 import blog1 from "../../../assets/blog1.webp"
 import blog2 from "../../../assets/blog2.webp"
 import blog3 from "../../../assets/blog3.webp"
-
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import {useEffect } from 'react';
 const OurBlog = () => {
+  useEffect(()=>{
+    AOS.init()
+  },[])
     return (
       <div className="py-[36px]">
         <h1 className="text-center text-4xl font-bold py-8">Our blogs</h1>
  <div className='grid grid-cols-1 lg:grid-cols-3 bg-base-200'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="zoom-in-right" data-aos-duration="1000" className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={blog2} alt="Shoes" className="rounded-xl" />
   </figure>
@@ -18,7 +23,7 @@ const OurBlog = () => {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quae quod ipsa aliquid delectus voluptatem qui dignissimos dolores corrupti corporis. Culpa voluptates saepe animi nisi pariatur consectetur atque hic corporis.</p>
   </div>
 </div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="zoom-in" data-aos-duration="1000" className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={blog3} alt="Shoes" className="rounded-xl" />
   </figure>
@@ -29,7 +34,7 @@ const OurBlog = () => {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quae quod ipsa aliquid delectus voluptatem qui dignissimos dolores corrupti corporis. Culpa voluptates saepe animi nisi pariatur consectetur atque hic corporis.</p>
   </div>
 </div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="zoom-in-left" data-aos-duration="1000" className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={blog1} alt="Shoes" className="rounded-xl" />
   </figure>
