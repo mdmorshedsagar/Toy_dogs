@@ -8,7 +8,7 @@ const ShopCategory = () => {
   const [category, setCategory] = useState("Teddy");
   
   useEffect(() => {
-    fetch(`http://localhost:5000/${category}`)
+    fetch(`https://dog-toys-server.vercel.app/${category}`)
       .then((res) => res.json())
       .then((result) => {
         setTabs(result);
