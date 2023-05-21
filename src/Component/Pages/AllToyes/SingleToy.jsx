@@ -2,12 +2,13 @@ import {
     
     useLoaderData,Link
   } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 
 const SingleToy = () => {
     const loaders = useLoaderData();
    const {name,picture,seller,email,category,price,rating,quantity,description}=loaders;
-//    console.log(name,picture,seller,email,category,price,rating,quantity,description)
+useTitle("toy details");
     return (
         <div className="card lg:card-side bg-slate-100 shadow-xl m-12 p-6 ">
   <figure className="w-[100%] h"><img src={picture} alt="Album" className="w-full h-full"/></figure>

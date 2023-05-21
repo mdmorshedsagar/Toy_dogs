@@ -3,11 +3,13 @@ import { Link, useNavigate ,useLocation} from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { FaGooglePlusG } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const { createLogin,createGoogle } =useContext(authContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  useTitle('login');
   const location = useLocation();
   const locations =location.state?.from?.pathname || "/" ;
   const handleLogin = (event) => {

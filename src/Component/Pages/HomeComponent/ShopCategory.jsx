@@ -9,7 +9,7 @@ const ShopCategory = () => {
   
   useEffect(() => {
     AOS.init();
-    fetch(`http://localhost:5000/${category}`)
+    fetch(`https://dog-toys-server.vercel.app/${category}`)
       .then((res) => res.json())
       .then((result) => {
         setTabs(result);
@@ -26,14 +26,14 @@ const ShopCategory = () => {
           <h1 className='text-center text-5xl font-bold py-8'>Shop by CAtegorys</h1>
            
   <Tabs>
-    <TabList classname="py-8 ">
+    <TabList classname="py-8 m-2">
       <Tab  onClick={() => handleCategoryClick("Teddy")} >Tedy bear</Tab>
       <Tab onClick={() => handleCategoryClick("Horse")}>Horse</Tab>
       <Tab onClick={() => handleCategoryClick("Cat")}>Cat</Tab>
     </TabList>
 
     <TabPanel>
-     <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
+     <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 m-2'>
      {
       tabs.map(tab => <SubtoyCards key={tab._id} tab={tab}></SubtoyCards> )
      }
@@ -41,14 +41,14 @@ const ShopCategory = () => {
     
     </TabPanel>
     <TabPanel>
-    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 m-2'>
      {
       tabs.map(tab => <SubtoyCards key={tab._id} tab={tab}></SubtoyCards> )
      }
      </div>
     </TabPanel>
     <TabPanel>
-    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 m-2'>
      {
       tabs.map(tab => <SubtoyCards key={tab._id} tab={tab}></SubtoyCards> )
      }

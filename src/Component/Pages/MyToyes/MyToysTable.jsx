@@ -19,7 +19,7 @@ const MyToysTable = ({myToy,myToys,setMyToys}) => {
           if (result.isConfirmed) {
 
 
-              fetch(`http://localhost:5000/myToys/${id}`, {
+              fetch(`https://dog-toys-server.vercel.app/myToys/${id}`, {
                   method: 'DELETE'
               })
                   .then(res => res.json())

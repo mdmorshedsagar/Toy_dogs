@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { authContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const AddToyes = () => {
   const { user } = useContext(authContext);
+  useTitle("add Toy");
   const handleAddToy = (event) => {
     event.preventDefault();
 
@@ -31,7 +33,7 @@ const AddToyes = () => {
     };
    
 
-    fetch("http://localhost:5000/addToy", {
+    fetch("https://dog-toys-server.vercel.app/addToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

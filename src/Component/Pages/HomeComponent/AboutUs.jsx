@@ -8,7 +8,7 @@ const AboutUs = () => {
   },[])
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center pt-[42px]">
-      <div data-aos="fade-right" data-aos-duration="1000" className="lg:pl-8">
+      <div data-aos="fade-right" data-aos-duration="1000" className="m-2 lg:pl-8">
         <p className="text-xl py-5">ABOUT US</p>
         <h1 className="text-6xl font-bold">
           Our company <br />
@@ -20,8 +20,8 @@ const AboutUs = () => {
           leads to a beautiful life.
         </p>
       </div>
-      <div data-aos="fade-left" data-aos-duration="1000">
-        <img src={aboutPic} />
+      <div className="w-[97%] mx-auto" data-aos="fade-left" data-aos-duration="1000">
+        <img className="w-full" src={aboutPic} />
       </div>
     </div>
   );

@@ -4,9 +4,10 @@ import { authContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 import { FaGooglePlusG } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 const Register = () => {
   const { createRegister ,createGoogle} = useContext(authContext);
-
+useTitle("Registration");
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();

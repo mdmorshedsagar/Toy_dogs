@@ -1,9 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 const UpdateToy = () => {
   const loaders = useLoaderData();
- 
+ useTitle("update toy")
   const {_id, name, picture,seller, email, category,price,rating,quantity, description} = loaders;
   const handleUpdateToy = event =>{
     event.preventDefault();
@@ -31,7 +32,7 @@ const UpdateToy = () => {
       description,
     };
     
-    fetch(`http://localhost:5000/updateToy/${_id}`, {
+    fetch(`https://dog-toys-server.vercel.app/updateToy/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

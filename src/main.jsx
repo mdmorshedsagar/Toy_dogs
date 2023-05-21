@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path:`/singleToy/:id`,
         element: <PrivateRoutes> <SingleToy></SingleToy> </PrivateRoutes> ,
-        loader: ({params}) => fetch(`http://localhost:5000/singleToy/${params.id}`)
+        loader: ({params}) => fetch(`https://dog-toys-server.vercel.app/singleToy/${params.id}`)
       },
       {
         path:"/myToys",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       {
         path:"/updateToys/:id",
         element:<PrivateRoutes > <UpdateToy></UpdateToy> </PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/updateToys/${params.id}`)
+        loader: ({params}) => fetch(`https://dog-toys-server.vercel.app/updateToys/${params.id}`)
       },
       {
         path:"/addToys",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       {
         path:`/singleSubToy/:id`,
         element: <PrivateRoutes><SingleSubData></SingleSubData> </PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/singleSubToy/${params.id}`)
+        loader: ({params}) => fetch(`https://dog-toys-server.vercel.app/singleSubToy/${params.id}`)
       }
 
     ]
@@ -76,7 +76,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+
+  <div className='lg:max-w-7xl mx-auto'>
+<React.StrictMode>
     <AuthProvider >
       <>
       <Toaster  position="top-right"
@@ -85,5 +87,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </>
     </AuthProvider>
    
-  </React.StrictMode>,
+  </React.StrictMode>
+  </div>
+ 
 )

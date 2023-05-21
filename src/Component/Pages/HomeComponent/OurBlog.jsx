@@ -9,11 +9,11 @@ const OurBlog = () => {
     AOS.init()
   },[])
     return (
-      <div className="py-[36px]">
+      <div className="py-[36px] m-2">
         <h1 className="text-center text-4xl font-bold py-8">Our blogs</h1>
- <div className='grid grid-cols-1 lg:grid-cols-3 bg-base-200'>
-            <div data-aos="zoom-in-right" data-aos-duration="1000" className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
+ <div className='grid grid-cols-1 lg:grid-cols-3 gap-12 bg-base-200'>
+            <div data-aos="zoom-in-right" data-aos-duration="1000" className="card  bg-base-100 shadow-xl">
+  <figure className="px-10 pt-10 ">
     <img src={blog2} alt="Shoes" className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
@@ -23,7 +23,7 @@ const OurBlog = () => {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quae quod ipsa aliquid delectus voluptatem qui dignissimos dolores corrupti corporis. Culpa voluptates saepe animi nisi pariatur consectetur atque hic corporis.</p>
   </div>
 </div>
-            <div data-aos="zoom-in" data-aos-duration="1000" className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="zoom-in" data-aos-duration="1000" className="card  bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={blog3} alt="Shoes" className="rounded-xl" />
   </figure>
@@ -34,7 +34,7 @@ const OurBlog = () => {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quae quod ipsa aliquid delectus voluptatem qui dignissimos dolores corrupti corporis. Culpa voluptates saepe animi nisi pariatur consectetur atque hic corporis.</p>
   </div>
 </div>
-            <div data-aos="zoom-in-left" data-aos-duration="1000" className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="zoom-in-left" data-aos-duration="1000" className="card  bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={blog1} alt="Shoes" className="rounded-xl" />
   </figure>

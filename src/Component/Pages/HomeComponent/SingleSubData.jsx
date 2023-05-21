@@ -3,9 +3,10 @@ import {
     
     useLoaderData,Link
   } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 const SingleSubData = () => {
    const singleData =useLoaderData( );
-  
+  useTitle("sub toy");
    const {picture,description,price,rating,name} = singleData;
     return (
        <div className="bg-base-100">

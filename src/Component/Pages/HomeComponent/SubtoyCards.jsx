@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
+import React  ,{ useContext } from 'react'
 import 'aos/dist/aos.css';
-
+import { authContext } from "../../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const SubtoyCards = (tab) => {
-
+  const { user} = useContext(authContext);
     const {picture,name,description,price,_id}=tab.tab;
-  
+    const handleViewDetails = () => {
+      if (!user) {
+        toast.error('You have to log in first to view details', {
+          position: toast.POSITION.TOP_RIGHT
+        });
+      }
+    };
     return (
       <div data-aos="fade-up"
       data-aos-duration="3000">
@@ -19,6 +27,7 @@ const SubtoyCards = (tab) => {
           <Link
             to={`/singleSubToy/${_id}`}
             className="btn btn-outline"
+            onClick={handleViewDetails}
           >
             View details
           </Link>

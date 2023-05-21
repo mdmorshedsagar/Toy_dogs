@@ -1,13 +1,15 @@
 
+import useTitle from "../../../hooks/useTitle";
 import ToysTable from "./toysTable";
 import { useEffect, useState } from "react";
 const AllToyes = () => {
   
   const [allToys, setAllToys] = useState([]);
   const [searchToy, setSearchToy] = useState("");
+  useTitle("all toys")
  console.log(searchToy);
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://dog-toys-server.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => {
        
@@ -17,7 +19,7 @@ const AllToyes = () => {
   }, []);
   const handleSearch = () => {
     console.log(searchToy)
-    fetch(`http://localhost:5000/getToysName/${searchToy}`)
+    fetch(`https://dog-toys-server.vercel.app/getToysName/${searchToy}`)
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);
